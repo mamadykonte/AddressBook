@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="utf-8">
+      <title>Carnet d'adresses - Module JS3</title>
+      <meta name="description" content="Gestion d'un carnet d'adresses exploitant le stockage local du navigateur">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800&display=swap" rel="stylesheet">
+      <link href="css/lib/normalize.css" rel="stylesheet">
+      <link href="css/lib/all.min.css" rel="stylesheet">
+      <link href="css/lib/layout-3wa.css" rel="stylesheet">
+      <link href="css/lib/theme-cafeine.css" rel="stylesheet">
+      <link href="css/address-book.css" rel="stylesheet">
+
+      <!-- Librairies de fonctions JavaScript -->
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/utilities.js"></script>
+      <script src="js/address-book.js"></script>
+      <script src="js/events.js"></script>
+  </head>
+  <body>
+    <header class="banner">
+      <a class="banner-link" href="">
+        <strong class="banner-title">Le carnet d'adresses local</strong>
+        <small>Module JS3</small>
+      </a>
+    </header>
+
+    <main class="container">
+
+      <header class="project-header">
+        <h1>Gérer la liste de contacts</h1>
+        <nav>
+          <button id="add-contact" class="btn btn-lg" title="Ajouter un contact">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+          </button>
+          <button id="clear-address-book" class="btn btn-lg" title="Effacer le carnet d'adresses">
+            <i class="fas fa-trash-alt" aria-hidden="true"></i>
+          </button>
+        </nav>
+      </header>
+
+      <div class="project-section">
+
+
+        <div class="bg-dark">
+          <h2>Contacts enregistrés</h2>
+          <!-- Affichage de la liste des contacts -->
+          <div id="address-book" class="address-book">
+            <p>Aucun contact enregistré</p>
+          </div>
+        </div>
+        <!--  Bloc intégrant affichant le détail d'un contact ou le formulaire  (ne pas le cahcer pour préserver la taille de la liste )-->
+        <div>
+          <div id="contact-details" class="is-hidden bg-dark">
+             <h2>Détail du contact</h2>
+             <dl>
+               <dt></dt>
+               <dd></dd>
+             </dl>
+             <a class="btn" href="#contact-form">Editer ce contact</a>
+          </div>
+
+          <!-- Formulaire de saisie/modification d'un contact -->
+          <form id="contact-form" class="is-hidden bg-dark" data-mode="add">
+            <fieldset>
+              <legend>Saisie/modification d'un contact</legend>
+              <ul class="field-list">
+                <li>
+                    <label for="title">Civilité</label>
+                    <select id="title" name="title">
+                        <option value="1">Madame</option>
+                        <option value="2">Mademoiselle</option>
+                        <option value="3">Monsieur</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="firstName">Prénom</label>
+                    <input id="firstName" type="text" name="firstName">
+                </li>
+                <li>
+                    <label for="lastName">Nom</label>
+                    <input id="lastName" type="text" name="lastName">
+                </li>
+                <li>
+                    <label for="phone">Téléphone</label>
+                    <input id="phone" type="text" name="phone" maxlength="10">
+                </li>
+              </ul>
+              <p class="text-right">
+                <button type="button" class="btn" id="save-contact">Enregistrer</button>
+                <input type="reset" class="btn">
+              </p>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="mentions">
+        <a href="https://3wa.fr/" title="Site de la 3WA"><img src="img/3wa.png" alt="3W Academy" width="50"></a>
+			<p><strong> &copy; 3W Academy - Formation Développeur WEB - Tous&nbsp;droits&nbsp;réservés</strong><br>
+			Cet exercice est mis à disposition des stagiaires dans le cadre exclusif de leur apprentissage</p>
+      <p><small>Nous remercions les auteurs de ces photos récoltées sur <a href="https://pixabay.com/" target="_blank">Pixabay</a></small></p>
+      <a class="goTop" href="#" aria-label="Remonter">↑</a>
+		</footer>
+
+    <!-- Code principal JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Affichage du support 3wa -->
+    <script src=".3wa/js/resources.js" data-md="resources/resources.md"></script>
+
+  </body>
+</html>
